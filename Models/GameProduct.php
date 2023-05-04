@@ -1,14 +1,13 @@
 <?php
 
 class GameProduct extends Product {
-    public $category;
-    public static $type = 'game';
+    public $material;
 
-    function __construct(string $name, int $price, string $brand, string $image, int $availability, string $productCode, string $description, string $category) {
+    function __construct(string $name, int $price, string $brand, string $image, int $availability, string $productCode, string $description, string $category, $material) {
         
-        parent::__construct($name, $price, $brand, $image, $availability, $productCode, $description);
+        parent::__construct($name, $price, $brand, $image, $availability, $productCode, $description, $category);
 
-        $this->category = $category;
+        $this->material = $material;
     }
 }
 

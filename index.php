@@ -23,15 +23,16 @@ require_once './db.php';
             <?php foreach($products as $product) { ?>
             <div class="card">
                 <div class="card-image">
-                    <img src="<?php echo $product->image; ?>" alt="Frisbee">
+                    <img src="<?php echo $product->image; ?>" alt="<?php echo $product->name; ?>">
                 </div>
                 <div class="card-details">
                     <div><strong>NOME:</strong><?php echo $product->name; ?></div>
                     <div><strong>PREZZO:</strong><?php echo $product->price; ?>€</div>
                     <div><strong>MARCA:</strong><?php echo $product->brand; ?></div>
-                    <div><strong>DISPONIBILITA':</strong><?php echo $product->availability; ?></div>
+                    <div><strong>DISPONIBILITA':</strong><?php echo $product->availability; ?> pz</div>
                     <div><strong>CODICE PRODOTTO:</strong><?php echo $product->productCode; ?></div>
                     <div><strong>CATEGORIA:</strong><?php echo $product->category; ?></div>
+                    <div><strong>MATERIALE:</strong><?php echo isset($product->material) ? $product->material : 'n/d'; ?></div>
                     <div><strong>DESCRIZIONE:</strong><?php echo $product->description; ?></div>
                 </div>    
             </div>

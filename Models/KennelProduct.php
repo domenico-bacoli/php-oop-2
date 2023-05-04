@@ -1,14 +1,16 @@
 <?php 
 class KennelProduct extends Product {
-    public $category;
-    public static $type = 'Kennel';
+    public $material;
+    public $weight;
 
-    function __construct(string $name, int $price, string $brand, string $image, int $availability, string $productCode, string $description, string $category){
+    function __construct(string $name, int $price, string $brand, string $image, int $availability, string $productCode, string $description, string $category, string $material, int $weight){
         
         //
-        parent::__construct($name, $price, $brand, $image, $availability, $productCode, $description);
+        parent::__construct($name, $price, $brand, $image, $availability, $productCode, $description, $category);
 
-        $this->category = $category;
+        $this->material = $material;
+        $this->weight = $weight;
     }
+
 }
 ?>
