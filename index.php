@@ -1,5 +1,8 @@
 <?php 
-// importo db.ph 
+require_once './Models/Product.php';
+require_once './Models/FoodProduct.php';
+require_once './Models/GameProduct.php';
+require_once './Models/KennelProduct.php';
 require_once './db.php';
 ?>
 
@@ -10,6 +13,8 @@ require_once './db.php';
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shop Online</title>
+    <!-- fontawesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
@@ -33,7 +38,7 @@ require_once './db.php';
                     <div><strong>MARCA:</strong><?php echo $product->brand; ?></div>
                     <div><strong>DISPONIBILITA':</strong><?php echo $product->availability; ?> pz</div>
                     <div><strong>CODICE PRODOTTO:</strong><?php echo $product->productCode; ?></div>
-                    <div><strong>CATEGORIA:</strong><?php echo $product->category; ?></div>
+                    <div class="category-icon"><i class="fa-solid <?php echo $product->category == 'Cane' ? 'fa-dog' : 'fa-cat'; ?> fa-cat"></i></div>
                     <div><strong>MATERIALE:</strong><?php echo isset($product->material) ? $product->material : 'n/d'; ?></div>
                     <div><strong>DESCRIZIONE:</strong><?php echo $product->description; ?></div>
                 </div>    
