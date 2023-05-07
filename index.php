@@ -40,7 +40,18 @@ require_once './db.php';
                     <div><strong>CODICE PRODOTTO:</strong><?php echo $product->productCode; ?></div>
                     <div class="category-icon"><i class="fa-solid <?php echo $product->category == 'Cane' ? 'fa-dog' : 'fa-cat'; ?> fa-cat"></i></div>
                     <div><strong>MATERIALE:</strong><?php echo isset($product->material) ? $product->material : 'n/d'; ?></div>
-                    <div><strong>DESCRIZIONE:</strong><?php echo $product->description; ?></div>
+                    <div><?php 
+                        switch(get_class($product)){
+                            case 'FoodProduct':
+                                echo "<strong>PESO: </strong>" . $product->getWeight() . 'g';
+                                break;
+                            case 'GameProduct':
+                                echo '';
+                                break;
+                            case 'KennelProduct':
+                                echo  ''; 
+                        }
+                    ?></div>
                 </div>    
             </div>
             <?php
