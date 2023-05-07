@@ -1,6 +1,7 @@
 <?php
-
+    require_once __DIR__ . '/../Traits/Weighable.php';
 class GameProduct extends Product {
+    use Weighable;
     public $material;
 
     function __construct(string $name, int $price, string $brand, string $image, int $availability, string $productCode, string $description, string $category, $material) {

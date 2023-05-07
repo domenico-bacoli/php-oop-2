@@ -1,6 +1,8 @@
 <?php
-
+    require_once __DIR__ . '/../Traits/Weighable.php';
 class FoodProduct extends Product {
+    use Weighable;
+
     public $expirationDate;
 
     function __construct(string $name, int $price, string $brand, string $image, int $availability, string $productCode, string $description, string $category, string $expirationDate) {
